@@ -12,18 +12,62 @@
     />
     <link href="/dist/output.css" rel="stylesheet" />
 
-    <title>Vite App</title>
+    <title>giard design</title>
   </head>
-  <body>
-    <nav class="flex py-6 w-full max-w-7xl mx-auto">
-      <img />
+  <body class="bg-grey">
+    <nav class="sticky flex p-6 font-inter w-full max-w-7xl mx-auto bg-white">
+      <img class="mr-auto" src="/public/logo.svg" />
+      <div class="flex gap-12 items-center">
+        <button
+          class="relative flex gap-1 items-center hover:font-semibold cursor-pointer"
+          id="oferta__btn"
+        >
+          Oferta
+          <img src="/chevronDown.svg" />
+          <ul
+            class="absolute top-[calc(100%)] left-[-50%] py-2 pt-6 bg-white -z-10 animate-slideDown drop-shadow-sm hidden"
+            id="oferta__dropdown"
+          >
+            <li
+              class="py-2 px-3 text-left font-medium hover:bg-green hover:text-white"
+            >
+              Projekty
+            </li>
+            <li
+              class="py-2 px-3 text-left font-medium hover:bg-green hover:text-white"
+            >
+              Wizualizacje
+            </li>
+            <li
+              class="py-2 px-3 text-left font-medium hover:bg-green hover:text-white"
+            >
+              Realizacje
+            </li>
+          </ul>
+        </button>
+        <a class="hover:font-semibold cursor-pointer">O firmie</a>
+        <a class="hover:font-semibold cursor-pointer">Realizacje</a>
+        <a class="hover:font-semibold cursor-pointer">Kontakt</a>
+
+        <div
+          class="group relative flex h-[24px] w-[24px] focus-within:w-[250px] rounded-full transition-all"
+        >
+          <input
+            id="searchField"
+            class="absolute top-0 left-0 bottom-0 right-0 cursor-pointer focus-within:z-0 z-20 focus-within:cursor-text bg-opacity-0 w-[calc(100%-24px)] p-2 opacity-0 group-focus-within:opacity-100 focus-visible:outline-none rounded-full"
+            type="text"
+            placeholder="Search..."
+          />
+          <button
+            id="searchButton"
+            class="w-6 h-6 group-focus-within:bg-contain bg-no-repeat ml-auto bg-cover z-10 bg-[url(/search.svg)] focus-visible:outline-none"
+          ></button>
+        </div>
+      </div>
     </nav>
+
     <div id="app"></div>
 
-    <div class="text-lg">ASsaas</div>
-    <div class="text-sm">asdasdas</div>
-    <h1>Hello world!</h1>
-    <h2 class="text-slate-700">ASDdasasd</h2>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

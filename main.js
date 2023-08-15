@@ -2,15 +2,11 @@ import "./style.css";
 import javascriptLogo from "./javascript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.js";
+import toggleHidden from "./scripts/toggleDropdown";
 
 document.querySelector("#app").innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
+    
     <h1>Hello Vite!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
@@ -22,8 +18,11 @@ document.querySelector("#app").innerHTML = `
 `;
 
 const child = document.createElement("div");
-child.textContent = "Wassuipbitch";
-child.className = "ass";
+
 document.querySelector("#app").appendChild(child);
+
+const ofertaButton = document.querySelector("#oferta__btn");
+const ofertaDropdown = document.querySelector("#oferta__dropdown");
+ofertaButton.addEventListener("click", () => toggleHidden(ofertaDropdown));
 
 setupCounter(document.querySelector("#counter"));
