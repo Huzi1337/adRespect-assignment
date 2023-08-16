@@ -14,7 +14,7 @@ class Card {
   renderMain() {
     this.element = document.createElement("div");
     const cardStyles =
-      "py-10 px-12 min-h-[370px] bg-white rounded-[28px] flex flex-col justify-between items-start";
+      "py-10 px-12 w-[380px] h-[370px] bg-white rounded-[28px] flex flex-col justify-between items-start";
     this.element.className = cardStyles;
   }
 
@@ -44,14 +44,14 @@ class Card {
   renderAction() {
     const actionButton = document.createElement("button");
     const actionButtonStyles =
-      "flex items-center gap-[10px] mt-auto border-b border-b-green";
+      "group flex items-center gap-[10px] mt-auto border-b border-b-green hover:brightness-110 transition-transform hover:scale-105";
     actionButton.className = actionButtonStyles;
 
     const actionButtonText = document.createElement("p");
 
     actionButtonText.textContent = this.action;
     const actionButtonTextStyles =
-      "text-green font-inter font-normal text-base text-center";
+      "text-green font-inter font-normal text-base text-center ]";
     actionButtonText.className = actionButtonTextStyles;
 
     const actionButtonIcon = document.createElement("img");
