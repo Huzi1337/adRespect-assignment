@@ -2,6 +2,18 @@
 export default {
   content: ["./**/**/*.{html,js}"],
   theme: {
+    lineHeight: {
+      base: "150%",
+      header: "120%",
+    },
+    fontSize: {
+      sm: "12px",
+      tiny: "14px",
+      base: "16px",
+      lg: "28px",
+      xl: "48px",
+      "2xl": "60px",
+    },
     fontFamily: {
       montserrat: ["Montserrat", "sans-serif"],
       inter: ["Inter", "sans-serif"],

@@ -1,19 +1,26 @@
 class SectionDescription {
-  constructor({ containerClass, section, title, emphasis = {}, text }) {
+  constructor({
+    containerClass,
+    section = {},
+    title = {},
+    emphasis = {},
+    text = {},
+  }) {
     this.renderContainer(containerClass);
     this.renderElement("h6", "font-inter text-sm text-green", section);
     const renderedTitle = this.renderElement(
       "h2",
-      "font-montserrat font-medium text-xl",
+      "font-montserrat leading-header font-medium text-xl",
       title,
     );
+
     this.renderElement(
       "span",
-      "font-montserrat font-medium italic text-xl",
+      "font-montserrat leading-header font-medium italic text-xl",
       emphasis,
       renderedTitle,
     );
-    this.renderElement("p", "font-inter text-base", text);
+    this.renderElement("p", "font-inter leading-base text-base", text);
   }
 
   renderContainer(containerClass) {
@@ -27,6 +34,7 @@ class SectionDescription {
     { className, textContent },
     parent = this.container,
   ) {
+    if (!textContent) return;
     const element = document.createElement(elementType);
     element.className = `${defaultStyles} ${className ? className : ""}`;
     element.textContent = textContent;

@@ -1,5 +1,5 @@
 export const slide = `
-<div name="heroblockSlide" class="heroblockSlide flex w-screen pl-[90px] transition-transform duration-500">
+<div name="heroblockSlide" class="heroblockSlide flex gap-16 w-screen pl-[90px] transition-transform duration-500">
 <div name="content" class="max-w-[600px] flex-1">
   <div class="flex-col items-start gap-[72px]">
     <div class="flex-col items-start gap-11 self-stretch">
