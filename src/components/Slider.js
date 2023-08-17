@@ -18,6 +18,7 @@ class Slider {
         this.showSlide();
       }
     });
+    this.showSlide();
   }
 
   showPrevSlide() {
