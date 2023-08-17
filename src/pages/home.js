@@ -1,5 +1,4 @@
-import Slider from "../components/Slider";
-import { slide } from "../content";
+import renderHero from "./home/renderHero";
 import renderKontakt from "./home/renderKontakt";
 import renderOFirmie from "./home/renderOFirmie";
 import renderOferta from "./home/renderOferta";
@@ -8,7 +7,7 @@ import renderRealizacje from "./home/renderRealizacje";
 const setupHomePage = () => {
   const app = document.querySelector("#app");
   const sectionClasses = {
-    hero: "h-[740px] w-full overflow-hidden",
+    hero: "relative h-[740px] w-full overflow-hidden",
     oferta: "flex flex-col gap-24 bg-grey pb-[160px] pt-[120px] items-center",
     oFirmie: "flex items-center gap-16 bg-green",
     realizacje:
@@ -17,11 +16,7 @@ const setupHomePage = () => {
   };
   app.innerHTML = "";
   renderPageSections(sectionClasses, app);
-  const hero = document.querySelector("#hero");
-
-  const slider = new Slider([slide, slide, slide]);
-  slider.render(hero);
-
+  renderHero();
   renderOferta();
   renderOFirmie();
   renderRealizacje();
