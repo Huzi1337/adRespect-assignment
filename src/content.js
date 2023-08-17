@@ -32,17 +32,17 @@ export const cardsContent = [
     action: "Dowiedz się więcej",
   },
   {
-    title: "Projekty",
-    icon: "/projekty.png",
+    title: "Wizualizacje",
+    icon: "/wizualizacje.png",
     textContent:
-      "Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.",
+      "Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.",
     action: "Dowiedz się więcej",
   },
   {
-    title: "Projekty",
-    icon: "/projekty.png",
+    title: "Realizacje",
+    icon: "/realizacje.png",
     textContent:
-      "Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.",
-    action: "Dowiedz się więcej",
+      "Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.",
+    action: "Zobacz nasze realizacje",
   },
 ];

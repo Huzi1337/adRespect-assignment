@@ -4,6 +4,6 @@
 
 @layer components {
   .btn {
-    @apply flex items-center gap-2 rounded-full px-6 pb-[14px] pt-3 font-inter text-base leading-base;
+    @apply flex items-center gap-2 rounded-full px-6 pb-[14px] pt-3 font-inter text-base leading-base transition-all hover:scale-110;
   }
 }

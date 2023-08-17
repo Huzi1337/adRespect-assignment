@@ -28,7 +28,8 @@ export default {
     extend: {
       animation: {
         slideDown: "slideDown 0.2s ease-in-out",
-        expandLeft: "expandLeft 0.3s ease-in",
+        bob: "bob 1s ease-in-out infinite",
+        wiggle: "wiggle 1s ease-in-out infinite",
       },
       keyframes: {
         slideDown: {
@@ -42,13 +43,13 @@ export default {
             opacity: 1,
           },
         },
-        expandLeft: {
-          "0%": {
-            transform: "scaleX(0.2)",
-          },
-          "100%": {
-            transform: "scaleX(1)",
-          },
+        wiggle: {
+          "0%, 100%": { transform: "translateX(-7%) translateZ(0)" },
+          "50%": { transform: "translateX(7%) translateZ(0)" },
+        },
+        bob: {
+          "0%, 100%": { transform: "translateY(-7%) translateZ(0)" },
+          "50%": { transform: "translateY(7%) translateZ(0)" },
         },
       },
       transitionProperty: {

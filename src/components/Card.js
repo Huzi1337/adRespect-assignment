@@ -19,11 +19,16 @@ class Card {
   }
 
   renderIcon() {
+    const iconContainer = document.createElement("div");
+    const iconContainerStyles = "flex justify-center items-center mb-8 h-11";
+    iconContainer.className = iconContainerStyles;
+
     const icon = document.createElement("img");
     icon.src = this.icon;
-    const iconStyles = "mb-8";
-    icon.className = iconStyles;
-    this.element.appendChild(icon);
+
+    iconContainer.appendChild(icon);
+
+    this.element.appendChild(iconContainer);
   }
   renderTitle() {
     const title = document.createElement("h4");
@@ -44,7 +49,7 @@ class Card {
   renderAction() {
     const actionButton = document.createElement("button");
     const actionButtonStyles =
-      "group flex items-center gap-[10px] mt-auto border-b border-b-green hover:brightness-110 transition-transform hover:scale-105";
+      "group flex items-center gap-[10px] mt-auto border-b border-b-green  transition-transform hover:scale-105";
     actionButton.className = actionButtonStyles;
 
     const actionButtonText = document.createElement("p");
@@ -57,6 +62,8 @@ class Card {
     const actionButtonIcon = document.createElement("img");
 
     actionButtonIcon.src = "/cardArrow.svg";
+
+    actionButtonIcon.className = "group-hover:animate-wiggle";
 
     actionButton.appendChild(actionButtonText);
     actionButton.appendChild(actionButtonIcon);

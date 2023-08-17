@@ -1,16 +1,18 @@
 class Button {
   constructor({
     text,
-    icon: { iconSrc, iconClass },
+    icon: { iconSrc, iconClass } = {},
     className,
-    onClick = () => {},
+    onClick,
+    onHover,
   }) {
     this.element = document.createElement("button");
     this.element.textContent = text;
-    this.element.className = "btn " + className;
+    this.element.className = "group btn " + className;
     if (iconSrc) this.renderIcon(iconSrc, iconClass);
 
-    this.element.addEventListener("click", onClick);
+    if (onClick) this.element.addEventListener("click", onClick);
+    if (onHover) this.element.addEventListener("mouseover", onHover);
   }
 
   renderIcon(iconSrc, iconClass) {

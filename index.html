@@ -58,7 +58,7 @@
             id="searchField"
             class="absolute bottom-0 left-0 right-0 top-0 z-20 w-[calc(100%-24px)] cursor-pointer rounded-full bg-opacity-0 p-2 text-tiny opacity-0 focus-within:z-0 focus-within:cursor-text focus-visible:outline-none group-focus-within:opacity-100"
             type="text"
-            placeholder="Search..."
+            placeholder="Szukaj..."
           />
           <button
             id="searchButton"
@@ -67,16 +67,72 @@
         </div>
       </div>
     </nav>
-    <div id="app"></div>
-    <div class="flex transition-transform duration-[0.3s] ease-in-out"></div>
-    <div class="absolute bottom-0 right-0"></div>
-    <button id="prevBtn">Previous</button>
-    <button id="nextBtn">Next</button>
+    <div id="app" class="min-h-screen"></div>
 
-    <button
-      class="h-24 w-24 bg-white bg-[url(/arrowLeft.svg)] bg-center bg-no-repeat"
-    ></button>
-    <div class="it w-full max-w-[1040px] flex-col gap-4 align-baseline"></div>
+    <footer class="flex flex-col items-center gap-[120px] bg-black py-20">
+      <div name="text1" class="flex w-[1040px] flex-col items-start gap-[62px]">
+        <div
+          name="line1"
+          class="flex items-center justify-between self-stretch"
+        >
+          <img class="mr-auto" src="/public/logoWhite.svg" />
+          <div class="flex items-center gap-6 text-grey">
+            <h5>Daj znać co możemy dla Ciebie zrobić!</h5>
+            <button
+              class="btn bg-green text-center text-base leading-base text-grey"
+            >
+              Skontaktuj się z nami
+            </button>
+          </div>
+        </div>
+        <div class="h-[1px] w-full bg-grey"></div>
+        <div
+          name="line2"
+          class="flex items-center justify-between self-stretch"
+        >
+          <div name="links" class="flex items-center gap-12">
+            <a
+              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey"
+              >Kontakt</a
+            >
+            <a
+              class="text-center font-inter text-tiny leading-base text-grey"
+              href="https://www.instagram.com"
+              >Instagram</a
+            >
+            <a
+              class="text-center font-inter text-tiny leading-base text-grey"
+              href="https://www.facebook.com"
+              >Facebook</a
+            >
+            <a
+              href="https://www.linkedin.com"
+              class="text-center font-inter text-tiny leading-base text-grey"
+              >LinkedIn</a
+            >
+          </div>
+          <div name="kontakt" class="flex items-center gap-12">
+            <h6 class="text-center font-inter text-tiny leading-base text-grey">
+              000-000-000
+            </h6>
+            <h6 class="text-center font-inter text-tiny leading-base text-grey">
+              giarddesign@kontakt.pl
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div name="text2" class="flex w-[1040px] items-center justify-between">
+        <h6 class="text-center font-inter text-base leading-base text-grey">
+          Prawa zastrzeżone © 2022
+        </h6>
+        <div class="flex items-center gap-4">
+          <h6 class="text-center font-inter text-base leading-base text-grey">
+            made by
+          </h6>
+          <img src="/Footer/designAuthorLogo.svg" />
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
