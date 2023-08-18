@@ -6,6 +6,7 @@ export default {
       w1040: { max: "1040px" },
 
       w1005: { max: "1005px" },
+      w850: { max: "850px" },
       w800: { max: "800px" },
     },
     lineHeight: {
