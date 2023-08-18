@@ -4,7 +4,7 @@ class Button {
     icon: { iconSrc, iconClass } = {},
     className,
     onClick,
-    onHover,
+    onEnter,
   }) {
     this.element = document.createElement("button");
     this.element.textContent = text;
@@ -12,7 +12,11 @@ class Button {
     if (iconSrc) this.renderIcon(iconSrc, iconClass);
 
     if (onClick) this.element.addEventListener("click", onClick);
-    if (onHover) this.element.addEventListener("mouseover", onHover);
+    if (onEnter)
+      this.element.addEventListener("mouseenter", () => {
+        console.log("enter");
+        onEnter();
+      });
   }
 
   renderIcon(iconSrc, iconClass) {

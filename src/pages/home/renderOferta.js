@@ -26,7 +26,7 @@ const renderOferta = () => {
 
   const cards = document.createElement("div");
   cards.className =
-    "flex px-[89px] justify-center items-start gap-16 self-stretch";
+    "flex px-[89px] flex-wrap justify-center items-start gap-16 self-stretch";
   cardsContent.forEach((cardInfo) => {
     const card = new Card(cardInfo);
     card.render(cards);

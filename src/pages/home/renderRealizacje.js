@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 import Modal from "../../components/Modal";
 import SectionDescription from "../../components/SectionDescription";
 import Macy from "macy";
-import Slider from "../../components/Slider";
+import Gallery from "../../components/Gallery";
 
 const renderRealizacje = () => {
   const realizacje = document.querySelector("#realizacje");
@@ -18,38 +18,57 @@ const renderRealizacje = () => {
 
   const photoBox = document.createElement("div");
   photoBox.className = "w-full h-auto overflow-hidden";
-  const modal = new Modal("app");
-  const images = [];
-  const renderImages = () => {
-    for (let i = 1; i <= 9; i++) {
-      const img = document.createElement("img");
-      img.src = `/galeria/medium/photo${i}.png`;
-      img.className =
-        "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer";
-      img.loading = "lazy";
-
-      images.push(img.cloneNode());
-
-      img.addEventListener("click", () => modal.show());
-      photoBox.appendChild(img);
-    }
-  };
-  renderImages();
-
-  const imageGallery = new Slider(images);
-  imageGallery.render(modal.contentBox);
-
   const macy = Macy({
     container: photoBox,
     columns: 3,
     margin: { x: 42, y: 42 },
     trueOrder: true,
   });
+  const modal = new Modal("app");
+  const images = [];
+  const imageGallery = new Gallery(images, 1);
+  //implement batching
+  const renderImages = (startIndex, displayedImages) => {
+    for (let i = startIndex; i < displayedImages; i++) {
+      const img = new Image();
+      img.src = `/galeria/medium/photo${i + 1}.png`;
+      img.className =
+        "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer";
+      img.loading = "lazy";
+      images.push(img.cloneNode());
+      img.addEventListener("click", () => {
+        imageGallery.setCurrentIndex(i);
+        modal.show();
+        const largerImg = new Image();
+        largerImg.src = `/galeria/large/photo${i + 1}.jfif`;
+
+        largerImg.onload = () => {
+          console.log("loaded");
+          img.src = largerImg.src;
+          macy.recalculateOnImageLoad();
+        };
+      });
+
+      photoBox.appendChild(img);
+    }
+    macy.recalculateOnImageLoad();
+  };
+  renderImages(0, 9);
+  imageGallery.updateImages(images);
+
+  modal.contentBox.appendChild(imageGallery.element);
 
   const blinder = document.createElement("div");
   const blinderStyles =
     "absolute bottom-11 pointer-events-none z-20 pb-11 flex items-end justify-center w-full h-[1000px] bg-gradient-to-t from-beige";
   blinder.className = blinderStyles;
+
+  const preloadImages = (startIndex, displayedImages) => {
+    for (let i = startIndex; i < displayedImages; i++) {
+      const img = new Image();
+      img.src = `/galeria/medium/photo${i + 1}.png`;
+    }
+  };
 
   const button = new Button({
     text: "Rozwiń",
@@ -60,8 +79,12 @@ const renderRealizacje = () => {
     className: "border border-black text-black pointer-events-auto",
     onClick: () => {
       blinder.className = "hidden";
-      renderImages();
-      macy.recalculateOnImageLoad();
+      renderImages(9, 18);
+
+      imageGallery.updateImages(images);
+    },
+    onEnter: () => {
+      preloadImages(9, 18);
     },
   });
   button.render(blinder);

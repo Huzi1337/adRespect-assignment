@@ -16,10 +16,13 @@
   </head>
   <body class="bg-grey">
     <nav
+      id="navbar"
       class="sticky z-10 mx-auto flex w-full bg-white px-[90px] py-6 font-inter"
+      data-view="false"
     >
       <img class="mr-auto" src="/public/logo.svg" />
-      <div class="flex items-center gap-12">
+      <button id="hamburger" class="hidden">Dajże menu!</button>
+      <div id="navbarOptions" class="flex items-center gap-12">
         <button
           class="relative flex cursor-pointer items-center gap-1 text-tiny hover:font-semibold"
           id="oferta__btn"
@@ -67,15 +70,21 @@
         </div>
       </div>
     </nav>
+
     <div id="app" class="relative min-h-screen"></div>
 
-    <footer class="flex flex-col items-center gap-[120px] bg-black py-20">
-      <div name="text1" class="flex w-[1040px] flex-col items-start gap-[62px]">
+    <footer
+      class="w1040:px-6 flex flex-col items-center gap-[120px] bg-black py-20"
+    >
+      <div
+        name="text1"
+        class="flex w-full max-w-[1040px] flex-col items-start gap-[62px]"
+      >
         <div
           name="line1"
-          class="flex items-center justify-between self-stretch"
+          class="w800:flex-col flex items-center justify-between self-stretch"
         >
-          <img class="mr-auto" src="/public/logoWhite.svg" />
+          <img class="w800:mr-0 mr-auto" src="/public/logoWhite.svg" />
           <div class="flex items-center gap-6 text-grey">
             <h5>Daj znać co możemy dla Ciebie zrobić!</h5>
             <button
@@ -90,7 +99,7 @@
           name="line2"
           class="flex items-center justify-between self-stretch"
         >
-          <div name="links" class="flex items-center gap-12">
+          <div name="links" class="w800:flex-col flex items-center gap-12">
             <a
               class="cursor-pointer text-center font-inter text-tiny leading-base text-grey"
               >Kontakt</a
@@ -111,7 +120,7 @@
               >LinkedIn</a
             >
           </div>
-          <div name="kontakt" class="flex items-center gap-12">
+          <div name="kontakt" class="w800:flex-col flex items-center gap-12">
             <h6 class="text-center font-inter text-tiny leading-base text-grey">
               000-000-000
             </h6>
@@ -121,7 +130,10 @@
           </div>
         </div>
       </div>
-      <div name="text2" class="flex w-[1040px] items-center justify-between">
+      <div
+        name="text2"
+        class="flex w-full max-w-[1040px] items-center justify-between"
+      >
         <h6 class="text-center font-inter text-base leading-base text-grey">
           Prawa zastrzeżone © 2022
         </h6>

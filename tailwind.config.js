@@ -2,6 +2,12 @@
 export default {
   content: ["./**/**/*.{html,js}"],
   theme: {
+    screens: {
+      w1040: { max: "1040px" },
+
+      w1005: { max: "1005px" },
+      w800: { max: "800px" },
+    },
     lineHeight: {
       base: "150%",
       header: "120%",

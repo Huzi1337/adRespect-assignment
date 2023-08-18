@@ -5,14 +5,15 @@ const renderOFirmie = () => {
   const oFirmie = document.querySelector("#oFirmie");
 
   const img = document.createElement("img");
-  const imgStyles = "max-h-[720px] min-h-full flex-1";
+  img.className =
+    "max-h-[720px] w-1/2 self-stretch min-h-full w800:hidden w1005:w-[30%] flex-1";
   img.src = "/oFirmie.png";
-  img.className = imgStyles;
 
   const contentBox = document.createElement("div");
-  const contentBoxStyles =
-    "pl-24 pr-[90px] flex flex-col  flex-1 shrink-0 items-start gap-[72px] max-w-[600px]";
-  contentBox.className = contentBoxStyles;
+
+  contentBox.className =
+    "pl-24 py-6 pr-[90px] flex flex-col  flex-1 shrink-0 items-start gap-[72px] max-w-[600px] w1005:p-5";
+
   const textContent = new SectionDescription({
     containerClass: "flex flex-col items-start gap-4",
     section: { textContent: "O firmie", className: "text-grey" },
@@ -28,7 +29,6 @@ const renderOFirmie = () => {
       className: "text-grey",
     },
   });
-  let sStyles = "group-hover:animate-wiggle";
   const contentBoxButton = new Button({
     text: "Poznaj nas bliżej",
     icon: {

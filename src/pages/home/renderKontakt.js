@@ -10,7 +10,7 @@ const renderKontakt = () => {
 
   const headLine = document.createElement("h1");
   const headLineStyles =
-    "font-montserrat tracking-[-2px] text-[40px] leading-header text-grey min-w-[599px]";
+    "font-montserrat tracking-[-2px] text-[40px] leading-header text-grey min-w-[599px] w1005:min-w-0";
   headLine.className = headLineStyles;
   headLine.textContent = "Zostańmy w kontakcie! Znajdziesz nas na ";
 
@@ -28,7 +28,7 @@ const renderKontakt = () => {
 
   const rightSideText = document.createElement("h3");
   const rightSideTextStyles =
-    "min-w-[161px] font-inter  font-normal leading-base text-grey";
+    "min-w-[161px] font-inter  font-normal leading-base text-grey w1005:min-w-0";
   rightSideText.className = rightSideTextStyles;
   rightSideText.innerText = "Śledź nasze najnowsze realizacje!";
   rightSide.appendChild(rightSideText);
