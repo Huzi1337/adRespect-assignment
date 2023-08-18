@@ -1,6 +1,8 @@
 import Button from "../../components/Button";
+import Modal from "../../components/Modal";
 import SectionDescription from "../../components/SectionDescription";
 import Macy from "macy";
+import Slider from "../../components/Slider";
 
 const renderRealizacje = () => {
   const realizacje = document.querySelector("#realizacje");
@@ -11,23 +13,34 @@ const renderRealizacje = () => {
     title: { textContent: "Nasze " },
     emphasis: { textContent: "projekty" },
   });
-  const gallery = document.createElement("div");
-  gallery.className = "w-full h-auto overflow-hidden";
-  let sStyles = "cursor-pointer";
-  const renderGalleryImages = () => {
+
+  textContent.render(realizacje);
+
+  const photoBox = document.createElement("div");
+  photoBox.className = "w-full h-auto overflow-hidden";
+  const modal = new Modal("app");
+  const images = [];
+  const renderImages = () => {
     for (let i = 1; i <= 9; i++) {
       const img = document.createElement("img");
       img.src = `/galeria/medium/photo${i}.png`;
       img.className =
         "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer";
       img.loading = "lazy";
-      gallery.appendChild(img);
+
+      images.push(img.cloneNode());
+
+      img.addEventListener("click", () => modal.show());
+      photoBox.appendChild(img);
     }
   };
-  renderGalleryImages();
+  renderImages();
+
+  const imageGallery = new Slider(images);
+  imageGallery.render(modal.contentBox);
 
   const macy = Macy({
-    container: gallery,
+    container: photoBox,
     columns: 3,
     margin: { x: 42, y: 42 },
     trueOrder: true,
@@ -47,14 +60,14 @@ const renderRealizacje = () => {
     className: "border border-black text-black pointer-events-auto",
     onClick: () => {
       blinder.className = "hidden";
-      renderGalleryImages();
+      renderImages();
       macy.recalculateOnImageLoad();
     },
   });
   button.render(blinder);
   realizacje.appendChild(blinder);
-  textContent.render(realizacje);
-  realizacje.appendChild(gallery);
+
+  realizacje.appendChild(photoBox);
 };
 
 export default renderRealizacje;
