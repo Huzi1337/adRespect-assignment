@@ -10,13 +10,13 @@ class SectionDescription {
     this.renderElement("h6", "font-inter text-sm text-green", section);
     const renderedTitle = this.renderElement(
       "h2",
-      "font-montserrat leading-header font-medium text-xl",
+      "w375:text-lg font-montserrat leading-header font-medium text-xl",
       title,
     );
 
     this.renderElement(
       "span",
-      "font-montserrat leading-header font-medium italic text-xl",
+      "w375:text-lg font-montserrat leading-header font-medium italic text-xl",
       emphasis,
       renderedTitle,
     );

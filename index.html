@@ -74,7 +74,7 @@
     <div id="app" class="relative min-h-screen"></div>
 
     <footer
-      class="w1040:px-6 flex flex-col items-center gap-[120px] bg-black py-20"
+      class="w1040:px-3 flex flex-col items-center gap-[120px] bg-black py-20"
     >
       <div
         name="text1"
@@ -82,10 +82,12 @@
       >
         <div
           name="line1"
-          class="w800:flex-col flex items-center justify-between self-stretch"
+          class="w800:flex-col w800:gap-6 flex items-center justify-between self-stretch"
         >
           <img class="w800:mr-0 mr-auto" src="/public/logoWhite.svg" />
-          <div class="flex items-center gap-6 text-grey">
+          <div
+            class="w800:flex-col w800:text-center flex items-center gap-6 text-grey"
+          >
             <h5>Daj znać co możemy dla Ciebie zrobić!</h5>
             <button
               class="btn bg-green text-center text-base leading-base text-grey"
@@ -101,22 +103,22 @@
         >
           <div name="links" class="w800:flex-col flex items-center gap-12">
             <a
-              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey"
+              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey hover:text-green"
               >Kontakt</a
             >
             <a
-              class="text-center font-inter text-tiny leading-base text-grey"
+              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey hover:text-green"
               href="https://www.instagram.com"
               >Instagram</a
             >
             <a
-              class="text-center font-inter text-tiny leading-base text-grey"
+              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey hover:text-green"
               href="https://www.facebook.com"
               >Facebook</a
             >
             <a
               href="https://www.linkedin.com"
-              class="text-center font-inter text-tiny leading-base text-grey"
+              class="cursor-pointer text-center font-inter text-tiny leading-base text-grey hover:text-green"
               >LinkedIn</a
             >
           </div>
@@ -132,7 +134,7 @@
       </div>
       <div
         name="text2"
-        class="flex w-full max-w-[1040px] items-center justify-between"
+        class="w800:flex-col w800:gap-3 flex w-full max-w-[1040px] items-center justify-between"
       >
         <h6 class="text-center font-inter text-base leading-base text-grey">
           Prawa zastrzeżone © 2022

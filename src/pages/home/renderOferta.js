@@ -5,7 +5,8 @@ import { cardsContent } from "../../content";
 const renderOferta = () => {
   const oferta = document.querySelector("#oferta");
   const textBox = document.createElement("div");
-  textBox.className = "flex flex-col items-start gap-4 w-full max-w-[1040px]";
+  textBox.className =
+    "w1100:items-center flex flex-col items-start gap-4 w-full max-w-[1040px]";
 
   const ofertaDescription = new SectionDescription({
     containerClass: "w-full max-w-[700px] flex flex-col gap-4 items-start",
@@ -26,7 +27,7 @@ const renderOferta = () => {
 
   const cards = document.createElement("div");
   cards.className =
-    "flex px-[89px] flex-wrap justify-center items-start gap-16 self-stretch";
+    "w1100:px-0 flex px-[89px] flex-wrap justify-center items-start gap-16 self-stretch";
   cardsContent.forEach((cardInfo) => {
     const card = new Card(cardInfo);
     card.render(cards);

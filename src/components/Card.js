@@ -14,7 +14,7 @@ class Card {
   renderMain() {
     this.element = document.createElement("div");
     const cardStyles =
-      "py-10 px-12 w-[380px] h-[370px] bg-white rounded-[28px] flex flex-col justify-between items-start";
+      "w1100:min-h-[370px] w1100:h-auto py-10 px-12 w-[380px] h-[370px] bg-white rounded-[28px] flex flex-col justify-between items-start";
     this.element.className = cardStyles;
   }
 
