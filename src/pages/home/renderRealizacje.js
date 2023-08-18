@@ -6,9 +6,8 @@ import Gallery from "../../components/Gallery";
 
 const renderRealizacje = () => {
   const realizacje = document.querySelector("#realizacje");
-
   const textContent = new SectionDescription({
-    containerClass: "flex flex-col pl-40 gap-4 items-start",
+    containerClass: "flex flex-col pl-40 gap-4 items-start w800:pl-3",
     section: { textContent: "Realizacje" },
     title: { textContent: "Nasze " },
     emphasis: { textContent: "projekty" },
@@ -22,12 +21,16 @@ const renderRealizacje = () => {
     container: photoBox,
     columns: 3,
     margin: { x: 42, y: 42 },
+    breakAt: {
+      900: 2,
+      425: 1,
+    },
     trueOrder: true,
   });
   const modal = new Modal("app");
   const images = [];
   const imageGallery = new Gallery(images, 1);
-  //implement batching
+
   const renderImages = (startIndex, displayedImages) => {
     for (let i = startIndex; i < displayedImages; i++) {
       const img = new Image();

@@ -688,6 +688,10 @@ video {
   top: 100%;
 }
 
+.bottom-1\/4 {
+  bottom: 25%;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -938,6 +942,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-1\/4 {
+  height: 25%;
 }
 
 .max-h-\[720px\] {
@@ -3074,8 +3082,9 @@ video {
     align-items: center;
   }
 
-  .w1005\:p-5 {
-    padding: 1.25rem;
+  .w1005\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .w1005\:text-center {
@@ -3121,6 +3130,19 @@ video {
 
   .w800\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .w800\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .w800\:pl-0 {
+    padding-left: 0px;
+  }
+
+  .w800\:pl-3 {
+    padding-left: 0.75rem;
   }
 
   .w800\:text-center {

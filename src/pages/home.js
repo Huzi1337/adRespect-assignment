@@ -10,7 +10,7 @@ const setupHomePage = () => {
     hero: "relative h-[740px] w-full overflow-hidden",
     oferta:
       "w1100:px-3 flex flex-col gap-24 bg-grey pb-[160px] pt-[120px] items-center",
-    oFirmie: "flex items-center gap-16 bg-green",
+    oFirmie: "w800:py-4 flex items-center gap-16 bg-green",
     realizacje:
       "relative flex flex-col pt-[120px] pb-11 gap-24 items-start bg-beige transition-all duration-500",
     kontakt: "py-[60px] flex flex-col items-center justify-center",

@@ -7,6 +7,7 @@ export default {
       w1040: { max: "1040px" },
 
       w1005: { max: "1005px" },
+      w900: { max: "900px" },
       w850: { max: "850px" },
       w800: { max: "800px" },
       w375: { max: "375px" },

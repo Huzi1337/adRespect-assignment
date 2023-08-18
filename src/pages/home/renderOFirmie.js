@@ -12,7 +12,7 @@ const renderOFirmie = () => {
   const contentBox = document.createElement("div");
 
   contentBox.className =
-    "pl-24 py-6 pr-[90px] flex flex-col  flex-1 shrink-0 items-start gap-[72px] max-w-[600px] w1005:p-5";
+    "pl-24 py-6 pr-[90px] flex flex-col  flex-1 shrink-0 items-start gap-[72px] max-w-[600px] w1005:px-5";
 
   const textContent = new SectionDescription({
     containerClass: "flex flex-col items-start gap-4",
