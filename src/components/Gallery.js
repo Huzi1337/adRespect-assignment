@@ -62,11 +62,13 @@ class Gallery {
     const prevButton = document.createElement("button");
     const nextButton = document.createElement("button");
     const buttonStyles =
-      "absolute h-24 w-24 top-[calc(50%-76px)]  bg-white bg-center bg-no-repeat";
-
+      "w800:h-12 w800:w-12 w800:top-[calc(50%-48px)] absolute h-16 w-16 top-[calc(50%-64px)] rounded-t   bg-white bg-center bg-no-repeat transition-colors hover:bg-green";
     nextButton.className =
-      buttonStyles + " -right-24 bg-[url(/arrowRight.svg)]";
-    prevButton.className = buttonStyles + " -left-24 bg-[url(/arrowLeft.svg)]";
+      buttonStyles +
+      " w800:-right-12 -right-16 bg-[url(/arrowRight.svg)] hover:bg-[url(/arrowRightWhite.svg)] rounded-r-full rounded-br-full";
+    prevButton.className =
+      buttonStyles +
+      " w800:-left-12 -left-16 bg-[url(/arrowLeft.svg)] hover:bg-[url(/arrowLeftWhite.svg)] rounded-l-full rounded-bl-full";
 
     prevButton.addEventListener("click", () => this.prevPhoto());
     nextButton.addEventListener("click", () => this.nextPhoto());

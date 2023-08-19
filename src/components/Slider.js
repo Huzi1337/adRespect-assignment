@@ -61,12 +61,16 @@ class Slider {
     const prevButton = document.createElement("button");
     const nextButton = document.createElement("button");
     const buttonStyles =
-      "h-24 w-24  bg-white bg-center bg-no-repeat w530:h-12 w530:w-12";
+      "h-24 w-24  bg-white bg-center bg-no-repeat w530:h-12 w530:w-12 transition-colors hover:bg-green";
 
     buttonContainer.className =
       "sliderButton absolute flex align-bottom bottom-0 right-0 w530:left-0 w530:justify-between";
-    nextButton.className = buttonStyles + " bg-[url(/arrowRight.svg)]";
-    prevButton.className = buttonStyles + " bg-[url(/arrowLeft.svg)]";
+    nextButton.className =
+      buttonStyles +
+      " bg-[url(/arrowRight.svg)] hover:bg-[url(/arrowRightWhite.svg)]";
+    prevButton.className =
+      buttonStyles +
+      " bg-[url(/arrowLeft.svg)] hover:bg-[url(/arrowLeftWhite.svg)]";
 
     prevButton.addEventListener("click", () => this.showPrevSlide());
     nextButton.addEventListener("click", () => this.showNextSlide());

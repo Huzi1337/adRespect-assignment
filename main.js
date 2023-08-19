@@ -37,7 +37,7 @@ const toggleMobile = () => {
     mobileHamburger.classList.remove("hidden");
 
     navbarOptions.className =
-      "absolute w-[150px] py-5 px-10 top-full right-0 flex flex-col-reverse bg-white gap-6 hidden animate-slideDown transition-all";
+      "absolute min-w-[150px] py-5 px-10 top-full right-0 flex flex-col-reverse bg-white gap-6 hidden animate-slideDown transition-all";
 
     ofertaElements.forEach((element) => element.classList.add("pl-10"));
 

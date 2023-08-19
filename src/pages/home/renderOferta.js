@@ -25,12 +25,23 @@ const renderOferta = () => {
 
   oferta.appendChild(textBox);
 
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        entry.target.classList.add("opacity-0");
+      } else {
+        entry.target.classList.remove("opacity-0");
+      }
+    });
+  });
+
   const cards = document.createElement("div");
   cards.className =
     "w1100:px-0 w1300:flex-wrap flex px-[89px] justify-center items-start gap-16 self-stretch";
   cardsContent.forEach((cardInfo) => {
     const card = new Card(cardInfo);
     card.render(cards);
+    cardObserver.observe(card.element);
   });
 
   oferta.appendChild(cards);

@@ -5,10 +5,11 @@ class Modal {
     this.contentBox = document.createElement("div");
 
     this.container.className =
-      "fixed items-center justify-center inset-0 flex z-50";
-    this.blinder.className = "absolute inset-0 bg-black bg-opacity-50 z-20";
+      "fixed items-center justify-center inset-0 flex z-50 transition-all animate-fadeIn";
+    this.blinder.className =
+      "absolute inset-0 bg-black bg-opacity-50 z-20 transition-all";
     this.contentBox.className =
-      "relative p-6 w-[75%] h-[75%] flex items-center justify-center bg-white z-30";
+      "relative p-6 w-[75%] h-[75%] flex items-center justify-center bg-white z-30 transition-all rounded-xl";
     this.hide();
     this.blinder.addEventListener("click", () => this.hide());
 

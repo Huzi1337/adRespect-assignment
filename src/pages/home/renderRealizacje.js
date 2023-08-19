@@ -42,8 +42,10 @@ const renderRealizacje = () => {
       images.push(img.cloneNode());
 
       img.addEventListener("click", () => {
-        imageGallery.setCurrentIndex(i);
-        modal.show();
+        if (window.innerWidth > 425) {
+          imageGallery.setCurrentIndex(i);
+          modal.show();
+        }
       });
 
       photoBox.appendChild(img);
@@ -86,6 +88,8 @@ const renderRealizacje = () => {
       preloadImages(9, 18);
     },
   });
+
+  window.addEventListener("resize", () => macy.recalculate());
   button.render(blinder);
   realizacje.appendChild(blinder);
 
