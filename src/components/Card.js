@@ -14,7 +14,7 @@ class Card {
   renderMain() {
     this.element = document.createElement("div");
     const cardStyles =
-      "group w1100:min-h-[370px] w1100:h-auto py-10 px-12 w-[380px] h-[370px] flex flex-col justify-between items-start bg-white rounded-[28px] hover:scale-105 hover:shadow-md transition-all hover:cursor-pointer opacity-0";
+      "group w1100:min-h-[370px] w1100:h-auto py-10 px-12 w-[380px] h-[370px] flex flex-col justify-between items-start bg-white rounded-[28px] hover:scale-105  hover:shadow-md transition-all hover:cursor-pointer";
     this.element.className = cardStyles;
   }
 

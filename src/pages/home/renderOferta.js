@@ -24,18 +24,6 @@ const renderOferta = () => {
   ofertaDescription.render(textBox);
 
   oferta.appendChild(textBox);
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("opacity-0", entry.isIntersecting);
-          console.log("trigga");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 1 },
-  );
 
   const cards = document.createElement("div");
   cards.className =
@@ -43,7 +31,6 @@ const renderOferta = () => {
   cardsContent.forEach((cardInfo) => {
     const card = new Card(cardInfo);
     card.render(cards);
-    observer.observe(card.element);
   });
 
   oferta.appendChild(cards);

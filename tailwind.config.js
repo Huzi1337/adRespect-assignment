@@ -43,8 +43,13 @@ export default {
         slideDown: "slideDown 0.2s ease-in-out",
         bob: "bob 1s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
+        slideRight: "slideRight 1s ease-in-out",
       },
       keyframes: {
+        slideRight: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
         slideDown: {
           "0%": {
             transform: "translateY(-10%)",

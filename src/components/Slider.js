@@ -35,11 +35,11 @@ class Slider {
   }
 
   enableTransitions() {
-    this.element.style.transitionDuration = "300ms";
+    this.element.style.transitionDuration = "400ms";
   }
 
   showPrevSlide() {
-    this.element.style.transition = "transform 0.3s ease-in";
+    this.element.style.transition = "transform 0.4s ease-in";
 
     this.currentIndex =
       (this.currentIndex - 1 + this.slides.length) % this.slides.length;
@@ -47,7 +47,7 @@ class Slider {
   }
 
   showNextSlide() {
-    this.element.style.transition = "transform 0.3s ease-in";
+    this.element.style.transition = "transform 0.4s ease-in";
     this.currentIndex = (this.currentIndex + 1) % this.slides.length;
     this.showSlide();
   }
