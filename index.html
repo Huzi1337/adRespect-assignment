@@ -17,14 +17,14 @@
   <body class="bg-grey">
     <nav
       id="navbar"
-      class="sticky z-10 mx-auto flex w-full bg-white px-[90px] py-6 font-inter"
+      class="w530:px-3 sticky z-10 mx-auto flex w-full bg-white px-[90px] py-6 font-inter"
       data-view="false"
     >
       <img class="mr-auto" src="/public/logo.svg" />
       <button
         id="hamburger"
         data-active="false"
-        class="hidden h-6 w-6 bg-[url(/hamburger.svg)] bg-no-repeat data-[active=true]:bg-[url(/hamburgerActive.svg)]"
+        class="hidden h-6 w-6 bg-[url(/hamburger.svg)] bg-no-repeat data-[active=true]:bg-[url(/hamburgerActive.svg)] data-[active=true]:brightness-150"
       ></button>
       <div id="navbarOptions" class="flex items-center gap-12">
         <button
@@ -55,14 +55,17 @@
           </ul>
         </button>
         <a
+          id="oFirmieNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
           >O firmie</a
         >
         <a
+          id="realizacjeNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
           >Realizacje</a
         >
         <a
+          id="kontaktNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
           >Kontakt</a
         >
@@ -78,7 +81,7 @@
           />
           <button
             id="searchButton"
-            class="z-10 ml-auto h-6 w-6 bg-[url(/search.svg)] bg-cover bg-no-repeat focus-visible:outline-none group-focus-within:bg-contain"
+            class="z-10 ml-auto h-6 w-6 bg-[url(/search.svg)] bg-cover bg-no-repeat transition-transform hover:scale-110 focus-visible:outline-none group-focus-within:bg-[url(/searchActive.svg)] group-focus-within:bg-contain group-focus-within:brightness-150"
           ></button>
         </div>
       </div>
@@ -87,6 +90,7 @@
     <div id="app" class="relative min-h-screen"></div>
 
     <footer
+      id="footer"
       class="flex flex-col items-center gap-[120px] bg-black py-20 w1040:px-3"
     >
       <div

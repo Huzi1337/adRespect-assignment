@@ -3,6 +3,7 @@ export default {
   content: ["./**/**/*.{html,js}"],
   theme: {
     screens: {
+      w1300: { max: "1300px" },
       w1100: { max: "1100px" },
       w1040: { max: "1040px" },
 

@@ -1,6 +1,6 @@
 import Card from "../../components/Card";
 import SectionDescription from "../../components/SectionDescription";
-import { cardsContent } from "../../content";
+import { cardsContent } from "../../data/cardsContent";
 
 const renderOferta = () => {
   const oferta = document.querySelector("#oferta");
@@ -24,14 +24,24 @@ const renderOferta = () => {
   ofertaDescription.render(textBox);
 
   oferta.appendChild(textBox);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) =>
+        entry.target.classList.toggle("hidden", entry.isIntersecting),
+      );
+    },
+    { threshold: 0.5 },
+  );
 
   const cards = document.createElement("div");
   cards.className =
-    "w1100:px-0 flex px-[89px] flex-wrap justify-center items-start gap-16 self-stretch";
+    "w1100:px-0 w1300:flex-wrap flex px-[89px] justify-center items-start gap-16 self-stretch";
   cardsContent.forEach((cardInfo) => {
     const card = new Card(cardInfo);
     card.render(cards);
+    observer.observe(card.element);
   });
+
   oferta.appendChild(cards);
 };
 

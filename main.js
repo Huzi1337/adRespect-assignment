@@ -7,8 +7,8 @@ const navbarOptions = navbar.querySelector("#navbarOptions");
 
 const mobileHamburger = navbar.querySelector("#hamburger");
 mobileHamburger.addEventListener("click", () => {
-  const booleanValue = mobileHamburger.dataset.active === "true";
-  mobileHamburger.dataset.active = !booleanValue;
+  const booleanActive = mobileHamburger.dataset.active === "true";
+  mobileHamburger.dataset.active = !booleanActive;
   toggleHidden(navbarOptions);
 });
 
@@ -37,7 +37,7 @@ const toggleMobile = () => {
     mobileHamburger.classList.remove("hidden");
 
     navbarOptions.className =
-      "absolute py-5 px-10 top-full right-0 flex flex-col-reverse bg-white gap-6 hidden animate-slideDown transition-all";
+      "absolute w-[150px] py-5 px-10 top-full right-0 flex flex-col-reverse bg-white gap-6 hidden animate-slideDown transition-all";
 
     ofertaElements.forEach((element) => element.classList.add("pl-10"));
 

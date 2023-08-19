@@ -1000,6 +1000,10 @@ video {
   width: 100vw;
 }
 
+.w-\[150px\] {
+  width: 150px;
+}
+
 .min-w-\[161px\] {
   min-width: 161px;
 }
@@ -1590,10 +1594,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-9 {
-  gap: 2.25rem;
 }
 
 .gap-\[10px\] {
@@ -2974,6 +2974,36 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.hover\:animate-pulse:hover {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hover\:animate-spin:hover {
+  animation: spin 1s linear infinite;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:bg-green:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(27 91 49 / var(--tw-bg-opacity));
@@ -3000,6 +3030,12 @@ video {
 .hover\:shadow-inner:hover {
   --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-md:hover {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -3030,12 +3066,30 @@ video {
   display: flex;
 }
 
+.group:focus-within .group-focus-within\:bg-green {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 91 49 / var(--tw-bg-opacity));
+}
+
+.group:focus-within .group-focus-within\:bg-\[url\(searchActive\.svg\)\] {
+  background-image: url(searchActive.svg);
+}
+
+.group:focus-within .group-focus-within\:bg-\[url\(\/searchActive\.svg\)\] {
+  background-image: url(/searchActive.svg);
+}
+
 .group:focus-within .group-focus-within\:bg-contain {
   background-size: contain;
 }
 
 .group:focus-within .group-focus-within\:opacity-100 {
   opacity: 1;
+}
+
+.group:focus-within .group-focus-within\:brightness-150 {
+  --tw-brightness: brightness(1.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @keyframes bob {
@@ -3070,6 +3124,30 @@ video {
   background-image: url(/hamburgerActive.svg);
 }
 
+.data-\[macy-complete\=0\]\:opacity-0[data-macy-complete=0] {
+  opacity: 0;
+}
+
+.data-\[macy-complete\=1\]\:opacity-100[data-macy-complete=1] {
+  opacity: 1;
+}
+
+.data-\[active\=true\]\:brightness-125[data-active=true] {
+  --tw-brightness: brightness(1.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.data-\[active\=true\]\:brightness-150[data-active=true] {
+  --tw-brightness: brightness(1.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (max-width: 1300px) {
+  .w1300\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 1100px) {
   .w1100\:h-auto {
     height: auto;
@@ -3077,6 +3155,10 @@ video {
 
   .w1100\:min-h-\[370px\] {
     min-height: 370px;
+  }
+
+  .w1100\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .w1100\:items-center {
@@ -3197,16 +3279,12 @@ video {
     left: 0px;
   }
 
-  .w530\:h-\[500px\] {
-    height: 500px;
+  .w530\:h-12 {
+    height: 3rem;
   }
 
   .w530\:h-\[600px\] {
     height: 600px;
-  }
-
-  .w530\:h-12 {
-    height: 3rem;
   }
 
   .w530\:w-12 {
@@ -3227,6 +3305,11 @@ video {
 
   .w530\:gap-4 {
     gap: 1rem;
+  }
+
+  .w530\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .w530\:pr-3 {

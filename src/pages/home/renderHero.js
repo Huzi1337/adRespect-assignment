@@ -39,7 +39,7 @@ const renderHero = () => {
     const contactButton = new Button({
       text: "Skontaktuj się z nami",
       className: "bg-green text-grey",
-      onClick: () => scrollToSection("kontakt"),
+      onClick: () => scrollToSection("footer", "end"),
     });
     contactButton.render(heroButtons);
 
@@ -50,7 +50,7 @@ const renderHero = () => {
         iconSrc: "/arrowDownGreen.svg",
         iconClass: "group-hover:animate-bob",
       },
-      onClick: () => scrollToSection("realizacje"),
+      onClick: () => scrollToSection("realizacje", "start"),
     });
     realizacjeButton.render(heroButtons);
 

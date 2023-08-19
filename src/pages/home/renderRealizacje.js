@@ -37,7 +37,7 @@ const renderRealizacje = () => {
       img.srcset = `/galeria/medium/photo${i + 1}.png 600w,
       /galeria/large/photo${i + 1}.png 1000w`;
       img.className =
-        "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer";
+        "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer  data-[macy-complete=1]:opacity-100 data-[macy-complete=0]:opacity-0";
       img.loading = "lazy";
       images.push(img.cloneNode());
 
@@ -50,6 +50,7 @@ const renderRealizacje = () => {
     }
     macy.recalculateOnImageLoad();
   };
+
   renderImages(0, 9);
   imageGallery.updateImages(images);
 

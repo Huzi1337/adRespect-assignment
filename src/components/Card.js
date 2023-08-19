@@ -14,7 +14,7 @@ class Card {
   renderMain() {
     this.element = document.createElement("div");
     const cardStyles =
-      "w1100:min-h-[370px] w1100:h-auto py-10 px-12 w-[380px] h-[370px] bg-white rounded-[28px] flex flex-col justify-between items-start";
+      "group w1100:min-h-[370px] w1100:h-auto py-10 px-12 w-[380px] h-[370px] flex flex-col justify-between items-start bg-white rounded-[28px] hover:scale-105 hover:shadow-md transition-all hover:cursor-pointer";
     this.element.className = cardStyles;
   }
 
@@ -49,7 +49,7 @@ class Card {
   renderAction() {
     const actionButton = document.createElement("button");
     const actionButtonStyles =
-      "group flex items-center gap-[10px] mt-auto border-b border-b-green  transition-transform hover:scale-105";
+      "flex items-center gap-[10px] mt-auto border-b border-b-green  transition-transform hover:scale-105";
     actionButton.className = actionButtonStyles;
 
     const actionButtonText = document.createElement("p");

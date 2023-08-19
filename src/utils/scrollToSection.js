@@ -1,4 +1,4 @@
-export const scrollToSection = (sectionId) => {
+export const scrollToSection = (sectionId, block) => {
   const section = document.querySelector(`#${sectionId}`);
-  section.scrollIntoView({ behavior: "smooth", block: "end" });
+  section.scrollIntoView({ behavior: "smooth", block });
 };

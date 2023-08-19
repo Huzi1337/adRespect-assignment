@@ -1,3 +1,4 @@
+import { scrollToSection } from "../utils/scrollToSection";
 import renderHero from "./home/renderHero";
 import renderKontakt from "./home/renderKontakt";
 import renderOFirmie from "./home/renderOFirmie";
@@ -16,6 +17,17 @@ const setupHomePage = () => {
     kontakt: "py-[60px] flex flex-col items-center justify-center",
   };
   app.innerHTML = "";
+
+  document
+    .querySelector("#oFirmieNav")
+    .addEventListener("click", () => scrollToSection("oFirmie", "center"));
+  document
+    .querySelector("#realizacjeNav")
+    .addEventListener("click", () => scrollToSection("realizacje", "start"));
+  document
+    .querySelector("#kontaktNav")
+    .addEventListener("click", () => scrollToSection("footer", "end"));
+
   renderPageSections(sectionClasses, app);
   renderHero();
   renderOferta();
