@@ -21,16 +21,20 @@
       data-view="false"
     >
       <img class="mr-auto" src="/public/logo.svg" />
-      <button id="hamburger" class="hidden">Dajże menu!</button>
+      <button
+        id="hamburger"
+        data-active="false"
+        class="hidden h-6 w-6 bg-[url(/hamburger.svg)] bg-no-repeat data-[active=true]:bg-[url(/hamburgerActive.svg)]"
+      ></button>
       <div id="navbarOptions" class="flex items-center gap-12">
         <button
-          class="relative flex cursor-pointer items-center gap-1 text-tiny hover:font-semibold"
+          class="group relative flex cursor-pointer items-center gap-1 text-tiny transition-all duration-[20ms] hover:font-semibold"
           id="oferta__btn"
         >
           Oferta
           <img src="/chevronDown.svg" />
           <ul
-            class="absolute left-[-50%] top-[calc(100%)] z-0 hidden animate-slideDown bg-white py-2 pt-6 drop-shadow-sm"
+            class="absolute left-[-50%] top-[calc(100%)] z-0 hidden animate-slideDown flex-col bg-white pt-6 shadow-sm drop-shadow-sm group-focus-within:flex"
             id="oferta__dropdown"
           >
             <li
@@ -50,16 +54,25 @@
             </li>
           </ul>
         </button>
-        <a class="cursor-pointer text-tiny hover:font-semibold">O firmie</a>
-        <a class="cursor-pointer text-tiny hover:font-semibold">Realizacje</a>
-        <a class="cursor-pointer text-tiny hover:font-semibold">Kontakt</a>
+        <a
+          class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          >O firmie</a
+        >
+        <a
+          class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          >Realizacje</a
+        >
+        <a
+          class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          >Kontakt</a
+        >
 
         <div
           class="group relative flex h-[24px] w-[24px] rounded-full transition-all focus-within:w-[250px]"
         >
           <input
             id="searchField"
-            class="absolute bottom-0 left-0 right-0 top-0 z-20 w-[calc(100%-24px)] cursor-pointer rounded-full bg-opacity-0 p-2 text-tiny opacity-0 focus-within:z-0 focus-within:cursor-text focus-visible:outline-none group-focus-within:opacity-100"
+            class="absolute inset-0 z-20 w-[calc(100%-24px)] cursor-pointer bg-opacity-0 p-2 pl-0 text-tiny opacity-0 focus-within:z-0 focus-within:cursor-text focus-visible:outline-none group-focus-within:opacity-100"
             type="text"
             placeholder="Szukaj..."
           />
@@ -74,7 +87,7 @@
     <div id="app" class="relative min-h-screen"></div>
 
     <footer
-      class="w1040:px-3 flex flex-col items-center gap-[120px] bg-black py-20"
+      class="flex flex-col items-center gap-[120px] bg-black py-20 w1040:px-3"
     >
       <div
         name="text1"
@@ -82,11 +95,11 @@
       >
         <div
           name="line1"
-          class="w800:flex-col w800:gap-6 flex items-center justify-between self-stretch"
+          class="flex items-center justify-between self-stretch w800:flex-col w800:gap-6"
         >
-          <img class="w800:mr-0 mr-auto" src="/public/logoWhite.svg" />
+          <img class="mr-auto w800:mr-0" src="/public/logoWhite.svg" />
           <div
-            class="w800:flex-col w800:text-center flex items-center gap-6 text-grey"
+            class="flex items-center gap-6 text-grey w800:flex-col w800:text-center"
           >
             <h5>Daj znać co możemy dla Ciebie zrobić!</h5>
             <button
@@ -101,7 +114,7 @@
           name="line2"
           class="flex items-center justify-between self-stretch"
         >
-          <div name="links" class="w800:flex-col flex items-center gap-12">
+          <div name="links" class="flex items-center gap-12 w800:flex-col">
             <a
               class="cursor-pointer text-center font-inter text-tiny leading-base text-grey hover:text-green"
               >Kontakt</a
@@ -122,7 +135,7 @@
               >LinkedIn</a
             >
           </div>
-          <div name="kontakt" class="w800:flex-col flex items-center gap-12">
+          <div name="kontakt" class="flex items-center gap-12 w800:flex-col">
             <h6 class="text-center font-inter text-tiny leading-base text-grey">
               000-000-000
             </h6>
@@ -134,7 +147,7 @@
       </div>
       <div
         name="text2"
-        class="w800:flex-col w800:gap-3 flex w-full max-w-[1040px] items-center justify-between"
+        class="flex w-full max-w-[1040px] items-center justify-between w800:flex-col w800:gap-3"
       >
         <h6 class="text-center font-inter text-base leading-base text-grey">
           Prawa zastrzeżone © 2022
