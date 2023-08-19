@@ -3336,3 +3336,7 @@ video {
     font-size: 28px;
   }
 }
+
+.\[\&\>\*\:nth-child\(2\)\]\:delay-200>*:nth-child(2) {
+  transition-delay: 200ms;
+}

@@ -26,11 +26,15 @@ const renderOferta = () => {
   oferta.appendChild(textBox);
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) =>
-        entry.target.classList.toggle("hidden", entry.isIntersecting),
-      );
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", entry.isIntersecting);
+          console.log("trigga");
+          observer.unobserve(entry.target);
+        }
+      });
     },
-    { threshold: 0.5 },
+    { threshold: 1 },
   );
 
   const cards = document.createElement("div");
