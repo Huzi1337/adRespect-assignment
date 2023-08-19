@@ -664,10 +664,6 @@ video {
   inset-inline-end: 0.25rem;
 }
 
-.left-0 {
-  left: 0px;
-}
-
 .left-\[-50\%\] {
   left: -50%;
 }
@@ -680,10 +676,6 @@ video {
   inset-inline-start: 0.25rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .top-\[calc\(100\%\)\] {
   top: calc(100%);
 }
@@ -694,14 +686,6 @@ video {
 
 .top-full {
   top: 100%;
-}
-
-.-left-11 {
-  left: -2.75rem;
-}
-
-.-right-11 {
-  right: -2.75rem;
 }
 
 .isolate {
@@ -2355,6 +2339,10 @@ video {
   padding-bottom: 160px;
 }
 
+.pl-0 {
+  padding-left: 0px;
+}
+
 .pl-10 {
   padding-left: 2.5rem;
 }
@@ -2381,10 +2369,6 @@ video {
 
 .pt-\[120px\] {
   padding-top: 120px;
-}
-
-.pl-0 {
-  padding-left: 0px;
 }
 
 .text-left {
@@ -3046,16 +3030,8 @@ video {
   display: flex;
 }
 
-.group:focus-within .group-focus-within\:flex-col {
-  flex-direction: column;
-}
-
 .group:focus-within .group-focus-within\:bg-contain {
   background-size: contain;
-}
-
-.group:focus-within .group-focus-within\:pl-0 {
-  padding-left: 0px;
 }
 
 .group:focus-within .group-focus-within\:opacity-100 {
@@ -3148,6 +3124,20 @@ video {
   }
 }
 
+@media (max-width: 900px) {
+  .w900\:hidden {
+    display: none;
+  }
+
+  .w900\:justify-center {
+    justify-content: center;
+  }
+
+  .w900\:pl-3 {
+    padding-left: 0.75rem;
+  }
+}
+
 @media (max-width: 850px) {
   .w850\:flex-col {
     flex-direction: column;
@@ -3199,6 +3189,62 @@ video {
 
   .w800\:text-center {
     text-align: center;
+  }
+}
+
+@media (max-width: 530px) {
+  .w530\:left-0 {
+    left: 0px;
+  }
+
+  .w530\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .w530\:h-\[600px\] {
+    height: 600px;
+  }
+
+  .w530\:h-12 {
+    height: 3rem;
+  }
+
+  .w530\:w-12 {
+    width: 3rem;
+  }
+
+  .w530\:flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .w530\:items-center {
+    align-items: center;
+  }
+
+  .w530\:justify-between {
+    justify-content: space-between;
+  }
+
+  .w530\:gap-4 {
+    gap: 1rem;
+  }
+
+  .w530\:pr-3 {
+    padding-right: 0.75rem;
+  }
+
+  .w530\:text-center {
+    text-align: center;
+  }
+
+  .w530\:text-xl {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 450px) {
+  .w450\:text-lg {
+    font-size: 28px;
   }
 }
 

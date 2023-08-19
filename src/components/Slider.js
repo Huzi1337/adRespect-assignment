@@ -60,10 +60,11 @@ class Slider {
     const buttonContainer = document.createElement("div");
     const prevButton = document.createElement("button");
     const nextButton = document.createElement("button");
-    const buttonStyles = "h-24 w-24  bg-white bg-center bg-no-repeat";
+    const buttonStyles =
+      "h-24 w-24  bg-white bg-center bg-no-repeat w530:h-12 w530:w-12";
 
     buttonContainer.className =
-      "sliderButton absolute flex align-bottom bottom-0 right-0";
+      "sliderButton absolute flex align-bottom bottom-0 right-0 w530:left-0 w530:justify-between";
     nextButton.className = buttonStyles + " bg-[url(/arrowRight.svg)]";
     prevButton.className = buttonStyles + " bg-[url(/arrowLeft.svg)]";
 

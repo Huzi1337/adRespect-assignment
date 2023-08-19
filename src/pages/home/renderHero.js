@@ -8,22 +8,23 @@ const renderHero = () => {
   const renderHeroSlide = () => {
     const heroSlide = document.createElement("div");
     heroSlide.className =
-      "heroblockSlide flex w-screen gap-16 items-center pl-[90px] transition-transform duration-500 bg-beige";
+      "heroblockSlide flex w-screen gap-16 items-center pl-[90px] transition-transform duration-500 bg-beige w900:justify-center w900:pl-3";
 
     const heroContent = document.createElement("div");
-    heroContent.className = "max-w-[600px] flex flex-col flex-1 gap-[72px]";
+    heroContent.className =
+      "w530:pr-3 w-full max-w-[600px] flex flex-col flex-1 gap-[72px]";
 
     const heroTextBox = document.createElement("div");
     heroTextBox.className = "flex flex-col items-start gap-11 self-stretch";
 
     const heroTitle = document.createElement("h1");
     heroTitle.className =
-      "font-montserrat text-2xl font-medium leading-header text-black";
+      "font-montserrat text-2xl font-medium leading-header text-black w530:text-xl w530:text-center w450:text-lg";
     heroTitle.innerHTML = "Nowoczesna aranżacja Twojego&nbsp;ogrodu";
     heroTextBox.appendChild(heroTitle);
 
     const heroText = document.createElement("h2");
-    heroText.className = "text-base leading-base";
+    heroText.className = "text-base leading-base w530:text-center";
     heroText.textContent = `Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
     realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
     podejściem do każdego projektu.`;
@@ -32,7 +33,8 @@ const renderHero = () => {
     heroContent.appendChild(heroTextBox);
 
     const heroButtons = document.createElement("div");
-    heroButtons.className = "flex items-start gap-8";
+    heroButtons.className =
+      "flex items-start gap-8 w530:gap-4 w530:flex-col-reverse w530:items-center";
 
     const contactButton = new Button({
       text: "Skontaktuj się z nami",
@@ -57,7 +59,8 @@ const renderHero = () => {
     heroSlide.appendChild(heroContent);
 
     const heroImg = document.createElement("div");
-    heroImg.className = "min-h-full flex-1 bg-[url(/Photo.png)] bg-cover";
+    heroImg.className =
+      "min-h-full flex-1 bg-[url(/Photo.png)] bg-cover w900:hidden";
 
     heroSlide.appendChild(heroImg);
 

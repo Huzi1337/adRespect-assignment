@@ -10,6 +10,8 @@ export default {
       w900: { max: "900px" },
       w850: { max: "850px" },
       w800: { max: "800px" },
+      w530: { max: "530px" },
+      w450: { max: "450px" },
       w375: { max: "375px" },
     },
     lineHeight: {

@@ -7,7 +7,7 @@ import renderRealizacje from "./home/renderRealizacje";
 const setupHomePage = () => {
   const app = document.querySelector("#app");
   const sectionClasses = {
-    hero: "relative h-[740px] w-full overflow-hidden",
+    hero: "relative h-[740px] w-full overflow-hidden w530:h-[600px]",
     oferta:
       "w1100:px-3 flex flex-col gap-24 bg-grey pb-[160px] pt-[120px] items-center",
     oFirmie: "w800:py-4 flex items-center gap-16 bg-green",
