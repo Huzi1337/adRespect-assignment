@@ -3,9 +3,18 @@ class Slider {
     this.element = document.createElement("div");
     this.element.className = "relative flex h-full bg-beige";
     this.slides = slides;
+
     this.currentIndex = 1;
     this.cloneEdgeSlides();
     this.renderSlides();
+    this.resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(this.resizeTimeout);
+      this.disableTransitions();
+      this.resizeTimeout = setTimeout(() => {
+        this.enableTransitions();
+      }, 300);
+    });
     this.element.addEventListener("transitionend", () => {
       if (this.slides[this.currentIndex].id === "lastClone") {
         this.element.style.transition = "none";
@@ -19,6 +28,14 @@ class Slider {
       }
     });
     this.showSlide();
+  }
+
+  disableTransitions() {
+    this.element.style.transitionDuration = "0ms";
+  }
+
+  enableTransitions() {
+    this.element.style.transitionDuration = "300ms";
   }
 
   showPrevSlide() {
