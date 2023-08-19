@@ -34,22 +34,16 @@ const renderRealizacje = () => {
   const renderImages = (startIndex, displayedImages) => {
     for (let i = startIndex; i < displayedImages; i++) {
       const img = new Image();
-      img.src = `/galeria/medium/photo${i + 1}.png`;
+      img.srcset = `/galeria/medium/photo${i + 1}.png 600w,
+      /galeria/large/photo${i + 1}.png 1000w`;
       img.className =
         "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer";
       img.loading = "lazy";
       images.push(img.cloneNode());
+
       img.addEventListener("click", () => {
         imageGallery.setCurrentIndex(i);
         modal.show();
-        const largerImg = new Image();
-        largerImg.src = `/galeria/large/photo${i + 1}.jfif`;
-
-        largerImg.onload = () => {
-          console.log("loaded");
-          img.src = largerImg.src;
-          macy.recalculateOnImageLoad();
-        };
       });
 
       photoBox.appendChild(img);
@@ -69,7 +63,8 @@ const renderRealizacje = () => {
   const preloadImages = (startIndex, displayedImages) => {
     for (let i = startIndex; i < displayedImages; i++) {
       const img = new Image();
-      img.src = `/galeria/medium/photo${i + 1}.png`;
+      img.srcset = `/galeria/medium/photo${i + 1}.png 600w,
+      /galeria/large/photo${i + 1}.png 1000w`;
     }
   };
 
