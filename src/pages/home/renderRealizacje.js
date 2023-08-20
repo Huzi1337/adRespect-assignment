@@ -12,6 +12,10 @@ const renderRealizacje = () => {
     title: { textContent: "Nasze " },
     emphasis: { textContent: "projekty" },
   });
+  const photoLimit = 18;
+  const photoIncrease = window.innerWidth > 425 ? 9 : 3;
+  const batchCount = Math.ceil(photoLimit / photoIncrease);
+  let currentBatch = 0;
 
   textContent.render(realizacje);
 
@@ -22,8 +26,15 @@ const renderRealizacje = () => {
   const images = [];
   const imageGallery = new Gallery(images, 1);
 
-  const renderImages = (startIndex, displayedImages) => {
-    for (let i = startIndex; i < displayedImages; i++) {
+  const renderImages = (batchIndex) => {
+    currentBatch = batchIndex;
+
+    const startRange = batchIndex * photoIncrease;
+    const endRange =
+      currentBatch === batchCount - 1
+        ? photoLimit
+        : (batchIndex + 1) * photoIncrease;
+    for (let i = startRange; i < endRange; i++) {
       const imgWrapper = document.createElement("div");
       imgWrapper.className = "bg-no-repeat bg-cover animate-pulse";
       imgWrapper.style.backgroundImage = `url(/galeria/small/photo${
@@ -56,7 +67,7 @@ const renderRealizacje = () => {
     }
   };
 
-  renderImages(0, 9);
+  renderImages(currentBatch);
   const macy = Macy({
     container: photoBox,
     columns: 3,
@@ -81,14 +92,6 @@ const renderRealizacje = () => {
     "absolute bottom-11 pointer-events-none z-20 pb-11 flex items-end justify-center w-full h-[50%] bg-gradient-to-t from-beige";
   blinder.className = blinderStyles;
 
-  const preloadImages = (startIndex, displayedImages) => {
-    for (let i = startIndex; i < displayedImages; i++) {
-      const img = new Image();
-      img.srcset = `/galeria/medium/photo${i + 1}.png 600w,
-      /galeria/large/photo${i + 1}.png 1000w`;
-    }
-  };
-
   const button = new Button({
     text: "Rozwiń",
     icon: {
@@ -97,13 +100,12 @@ const renderRealizacje = () => {
     },
     className: "border border-black text-black pointer-events-auto",
     onClick: () => {
-      blinder.className = "hidden";
-      renderImages(9, 18);
+      currentBatch++;
+      renderImages(currentBatch);
+      if (currentBatch === batchCount - 1) blinder.className = "hidden";
       macy.recalculate();
+      macy.recalculateOnImageLoad();
       imageGallery.updateImages(images);
-    },
-    onEnter: () => {
-      preloadImages(9, 18);
     },
   });
 
