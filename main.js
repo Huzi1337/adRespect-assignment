@@ -1,5 +1,4 @@
 import "./src/style.css";
-import toggleHidden from "./scripts/toggleDropdown";
 import setupHomePage from "./src/pages/home";
 
 const navbar = document.querySelector("#navbar");
@@ -9,7 +8,7 @@ const mobileHamburger = navbar.querySelector("#hamburger");
 mobileHamburger.addEventListener("click", () => {
   const booleanActive = mobileHamburger.dataset.active === "true";
   mobileHamburger.dataset.active = !booleanActive;
-  toggleHidden(navbarOptions);
+  navbarOptions.classList.toggle("hidden");
 });
 
 const hideElement = (element, event) => {

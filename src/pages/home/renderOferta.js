@@ -27,10 +27,20 @@ const renderOferta = () => {
 
   const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
+      const cardId = entry.target.getAttribute("card-id");
+      const cardAnimationClass =
+        window.innerWidth < 600
+          ? "animate-slideRight2"
+          : cardId === "card1"
+          ? "animate-slideRight1"
+          : cardId === "card2"
+          ? "animate-slideRight2"
+          : "animate-slideRight3";
       if (!entry.isIntersecting) {
-        entry.target.classList.add("opacity-0");
+        entry.target.classList.remove(cardAnimationClass);
       } else {
-        entry.target.classList.remove("opacity-0");
+        console.log("intercepting");
+        entry.target.classList.add(cardAnimationClass);
       }
     });
   });

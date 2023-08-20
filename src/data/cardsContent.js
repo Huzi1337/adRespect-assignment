@@ -1,5 +1,6 @@
 export const cardsContent = [
   {
+    id: "card1",
     title: "Projekty",
     icon: "/projekty.png",
     textContent:
@@ -7,6 +8,8 @@ export const cardsContent = [
     action: "Dowiedz się więcej",
   },
   {
+    id: "card2",
+
     title: "Wizualizacje",
     icon: "/wizualizacje.png",
     textContent:
@@ -14,6 +17,8 @@ export const cardsContent = [
     action: "Dowiedz się więcej",
   },
   {
+    id: "card3",
+
     title: "Realizacje",
     icon: "/realizacje.png",
     textContent:

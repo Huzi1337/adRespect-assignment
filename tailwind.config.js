@@ -43,7 +43,9 @@ export default {
         slideDown: "slideDown 0.2s ease-in-out",
         bob: "bob 1s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
-        slideRight: "slideRight 1s ease-in-out",
+        slideRight1: "slideRight 0.6s ease-in-out",
+        slideRight2: "slideRight 0.8s ease-in-out",
+        slideRight3: "slideRight 1s ease-in-out",
         fadeIn: "fadeIn 0.2s ease-in",
       },
       keyframes: {
@@ -52,8 +54,8 @@ export default {
           "100%": { opacity: 1 },
         },
         slideRight: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
+          "0%": { transform: "translateX(-100%)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
         },
         slideDown: {
           "0%": {
