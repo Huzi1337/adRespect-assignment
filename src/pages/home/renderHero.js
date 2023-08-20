@@ -60,7 +60,14 @@ const renderHero = () => {
 
     const heroImg = document.createElement("div");
     heroImg.className =
-      "min-h-full flex-1 bg-[url(/Photo.png)] bg-cover w900:hidden";
+      "min-h-full flex-1 bg-[url(/hero/small/photo1.png)] bg-cover w900:hidden animate-pulse";
+
+    const heroFullImg = new Image();
+    heroFullImg.src = "/hero/medium/photo1.png";
+    heroFullImg.onload = () => {
+      heroImg.style.backgroundImage = "url(/hero/medium/photo1.png)";
+      heroImg.classList.remove("animate-pulse");
+    };
 
     heroSlide.appendChild(heroImg);
 

@@ -2192,6 +2192,10 @@ video {
   background-image: url(/oFirmie/small/photo1.png);
 }
 
+.bg-\[url\(\/hero\/small\/photo1\.png\)\] {
+  background-image: url(/hero/small/photo1.png);
+}
+
 .from-beige {
   --tw-gradient-from: #DCC1AB var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(220 193 171 / 0) var(--tw-gradient-to-position);

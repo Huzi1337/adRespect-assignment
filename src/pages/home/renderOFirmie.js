@@ -5,7 +5,7 @@ const renderOFirmie = () => {
   const oFirmie = document.querySelector("#oFirmie");
 
   const img = document.createElement("img");
-  img.className = "object-fill opacity-0 transition-opacity";
+  img.className = "w-full h-full opacity-0 transition-opacity";
   img.src = "/oFirmie/medium/photo1.png";
 
   const imgWrapper = document.createElement("div");

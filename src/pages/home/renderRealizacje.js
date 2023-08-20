@@ -34,11 +34,12 @@ const renderRealizacje = () => {
       img.srcset = `/galeria/medium/photo${i + 1}.png 600w,
       /galeria/large/photo${i + 1}.png 1000w`;
       img.className =
-        "transition-all  hover:scale-105 hover:shadow-inner cursor-pointer opacity-0";
+        "transition-all hover:scale-105 hover:shadow-inner cursor-pointer w-full opacity-0";
       img.loading = "lazy";
       img.onload = () => {
         img.classList.remove("opacity-0");
         imgWrapper.classList.remove("animate-pulse");
+        imgWrapper.classList.add("bg-opacity-0");
       };
       imgWrapper.appendChild(img);
 
@@ -67,7 +68,9 @@ const renderRealizacje = () => {
     trueOrder: true,
   });
   macy.recalculate();
-  macy.recalculateOnImageLoad();
+  macy.runOnImageLoad(function () {
+    macy.recalculate(true);
+  }, true);
 
   imageGallery.updateImages(images);
 
@@ -97,7 +100,6 @@ const renderRealizacje = () => {
       blinder.className = "hidden";
       renderImages(9, 18);
       macy.recalculate();
-      macy.recalculateOnImageLoad();
       imageGallery.updateImages(images);
     },
     onEnter: () => {
