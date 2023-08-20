@@ -5,9 +5,20 @@ const renderOFirmie = () => {
   const oFirmie = document.querySelector("#oFirmie");
 
   const img = document.createElement("img");
-  img.className =
-    "max-h-[720px] w-1/2 self-stretch min-h-full w800:hidden w1005:w-[30%] flex-1";
-  img.src = "/oFirmie.png";
+  img.className = "object-fill opacity-0 transition-opacity";
+  img.src = "/oFirmie/medium/photo1.png";
+
+  const imgWrapper = document.createElement("div");
+  imgWrapper.className =
+    "max-h-[720px] w-1/2 self-stretch min-h-full w800:hidden w1005:w-[30%] flex-1 bg-no-repeat bg-cover bg-[url(/oFirmie/small/photo1.png)] animate-pulse blur-sm";
+
+  imgWrapper.appendChild(img);
+
+  img.onload = () => {
+    imgWrapper.classList.remove("animate-pulse");
+    imgWrapper.classList.remove("blur-sm");
+    img.classList.remove("opacity-0");
+  };
 
   const contentBox = document.createElement("div");
 
@@ -41,7 +52,7 @@ const renderOFirmie = () => {
   textContent.render(contentBox);
   contentBoxButton.render(contentBox);
 
-  oFirmie.appendChild(img);
+  oFirmie.appendChild(imgWrapper);
   oFirmie.appendChild(contentBox);
 };
 

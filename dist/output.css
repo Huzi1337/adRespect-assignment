@@ -944,6 +944,10 @@ video {
   height: 100%;
 }
 
+.h-\[50\%\] {
+  height: 50%;
+}
+
 .max-h-\[720px\] {
   max-height: 720px;
 }
@@ -1128,6 +1132,16 @@ video {
 
 .animate-slideDown {
   animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer {
@@ -2174,6 +2188,10 @@ video {
   background-image: none;
 }
 
+.bg-\[url\(\/oFirmie\/small\/photo1\.png\)\] {
+  background-image: url(/oFirmie/small/photo1.png);
+}
+
 .from-beige {
   --tw-gradient-from: #DCC1AB var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(220 193 171 / 0) var(--tw-gradient-to-position);
@@ -2859,6 +2877,16 @@ video {
 
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur-md {
+  --tw-blur: blur(12px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur-sm {
+  --tw-blur: blur(4px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
