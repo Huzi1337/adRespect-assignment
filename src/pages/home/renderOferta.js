@@ -39,7 +39,6 @@ const renderOferta = () => {
       if (!entry.isIntersecting) {
         entry.target.classList.remove(cardAnimationClass);
       } else {
-        console.log("intercepting");
         entry.target.classList.add(cardAnimationClass);
       }
     });

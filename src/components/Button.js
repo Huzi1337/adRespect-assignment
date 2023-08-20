@@ -14,7 +14,6 @@ class Button {
     if (onClick) this.element.addEventListener("click", onClick);
     if (onEnter)
       this.element.addEventListener("mouseenter", () => {
-        console.log("enter");
         onEnter();
       });
   }

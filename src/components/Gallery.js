@@ -62,7 +62,7 @@ class Gallery {
     const prevButton = document.createElement("button");
     const nextButton = document.createElement("button");
     const buttonStyles =
-      "w800:h-12 w800:w-12 w800:top-[calc(50%-48px)] absolute h-16 w-16 top-[calc(50%-64px)] rounded-t   bg-white bg-center bg-no-repeat transition-colors hover:bg-green";
+      "w800:h-12 w800:w-12 w800:top-[calc(50%-48px)] absolute h-16 w-16 top-[calc(50%-64px)] bg-white bg-center bg-no-repeat transition-colors hover:bg-green";
     nextButton.className =
       buttonStyles +
       " w800:-right-12 -right-16 bg-[url(/arrowRight.svg)] hover:bg-[url(/arrowRightWhite.svg)] rounded-r-full rounded-br-full";
