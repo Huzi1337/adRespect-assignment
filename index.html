@@ -17,7 +17,7 @@
   <body class="bg-grey">
     <nav
       id="navbar"
-      class="w530:px-3 sticky z-10 mx-auto flex w-full bg-white px-[90px] py-6 font-inter"
+      class="sticky z-10 mx-auto flex w-full bg-white px-[90px] py-6 font-inter w530:px-3"
       data-view="false"
     >
       <img class="mr-auto" src="/public/logo.svg" />
@@ -57,31 +57,37 @@
         <a
           id="oFirmieNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          tabindex="0"
           >O firmie</a
         >
         <a
           id="realizacjeNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          tabindex="0"
           >Realizacje</a
         >
         <a
           id="kontaktNav"
           class="cursor-pointer text-tiny transition-all duration-[20ms] hover:font-semibold"
+          tabindex="0"
           >Kontakt</a
         >
 
         <div
           class="group relative flex h-[24px] w-[24px] rounded-full transition-all focus-within:w-[250px]"
+          tabindex="0"
         >
           <input
             id="searchField"
             class="absolute inset-0 z-20 w-[calc(100%-24px)] cursor-pointer bg-opacity-0 p-2 pl-0 text-tiny opacity-0 focus-within:z-0 focus-within:cursor-text focus-visible:outline-none group-focus-within:opacity-100"
             type="text"
             placeholder="Szukaj..."
+            tabindex="0"
           />
           <button
             id="searchButton"
             class="z-10 ml-auto h-6 w-6 bg-[url(/search.svg)] bg-cover bg-no-repeat transition-transform hover:scale-110 focus-visible:outline-none group-focus-within:bg-[url(/searchActive.svg)] group-focus-within:bg-contain group-focus-within:brightness-150"
+            tabindex="0"
           ></button>
         </div>
       </div>
